@@ -10,7 +10,7 @@ output_path = input("请输入保存程序生成文件的路径： ")
 
 # 定义预处理需要的操作
 
-def GetFilelist(dir_path):
+def GetFileList(dir_path):
     """遍历：遍历文件夹内文件：传入需要遍历的文件夹路径，返回其内所有文件的完整路径列表"""
     Filelist = []
     for home, dirs, files in os.walk(dir_path):
@@ -32,7 +32,7 @@ def ChangeEncode(file_list):
                 fp.write(content)
 
 
-def Getstring(path_string):
+def GetString(path_string):
     """字符串处理：输入路径名，返回受试者姓名，测量日期"""
     filename = path_string.split("\\")[-1]
     # 提取姓名
@@ -45,7 +45,7 @@ def Getstring(path_string):
 
 
 # 开始处理
-filelist = GetFilelist(data_root)
+filelist = GetFileList(data_root)
 ChangeEncode(filelist)
 
 # 批量提取KKS、QS status的值
@@ -63,7 +63,7 @@ for file_path in filelist:
         qs = df[qs_bool].iloc[0, 1]
 
         # 得到图片名和日期
-        str = Getstring(file_path)
+        str = GetString(file_path)
 
         s = pd.DataFrame({'name':str[0], 'time':str[1], 'KKS':kks, 'QS Status':qs},
                          index=[0])
