@@ -11,7 +11,7 @@
 ## 注意事项：
 - 路径名称书写规范：请使用正斜杠"/"或双反斜杠"\\\\"进行连接。
   - 示例：F:/python/other/FFKC CSV文件
-  - 示例：F:\\python/other/FFKC CSV文件  （混用也可以）
+  - 示例：F:\\\\python/other/FFKC CSV文件  （混用也可以）
 - 输入的第一个变量data_root文件夹内，请不要包含不相关csv文件。
 - 运行程序时，请先关闭生成的intergration.csv文件，否则会无法更改导致报错。
 - 请不要更改原始csv文件名，受试者姓名和检查时间是从文件名中提取。
