@@ -44,8 +44,13 @@ def GetString(path_string):
 
 
 # 开始处理
+print("Begin to obtain filelist.")
 filelist = GetFileList(data_root)
+print("Filelist is obtained.")
+
+print("Begin to change encoding format.")
 ChangeEncode(filelist)
+print("The encoding format change is complete.")
 
 # 批量提取KKS、QS status的值
 colname = ('name', 'time', 'KKS', 'QS Status')
