@@ -22,7 +22,7 @@ def GetFileList(dir_path):
 def ChangeEncode(file_list):
     """转码：路径列表里的csv文件批量转换为utf-8编码格式"""
     for file_path in file_list:
-        if ".csv" in file_path:
+        if ".CSV" in file_path:
             with open(file_path, 'rb+') as fp:
                 content = fp.read()
                 encoding = detect(content)['encoding']
@@ -52,7 +52,7 @@ colname = ('name', 'time', 'KKS', 'QS Status')
 total = pd.DataFrame(index=[0], columns=colname)
 
 for file_path in filelist:
-    if (".csv" in file_path)|(".CSV" in file_path):  # 如果是csv文件，进入处理
+    if ".CSV" in file_path:  # 如果是csv文件，进入处理
         df = pd.read_csv(file_path, sep=";", encoding="utf8")
 
         # 当文件中不存在KKS和QS status时，避免崩溃
