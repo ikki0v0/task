@@ -3,13 +3,13 @@ from chardet import detect
 import time
 import pandas as pd
 
-# 考虑使用相对目录，或者绝对目录?
+
 data_root = input("请输入csv文件所在的总文件夹路径： ")  # input输入地址自带双引号！！
 output_path = input("请输入保存程序生成文件的路径： ")
 
 
-dir_path = "F:/other/FFKC CSV文件"
 # 定义预处理需要的操作
+
 # 遍历：遍历文件夹内文件：传入需要遍历的文件夹路径，返回其内所有文件的完整路径列表
 def get_filelist(dir_path):
     Filelist = []
@@ -19,7 +19,7 @@ def get_filelist(dir_path):
             Filelist.append(os.path.join(home, filename))
     return Filelist
 
-# 转码：csv文件路径列表批量转换为utf-8编码格式
+# 转码：路径列表里的csv文件批量转换为utf-8编码格式
 def change_encode(file_list):
     for file_path in file_list:
         if ".csv" in file_path:
@@ -70,8 +70,8 @@ for file_path in filelist:
 
 
 # 保存到“integration.csv”文件
-total = total.drop(0)
+total = total.drop(0)  # 删除初始创建的索引0
 total.to_csv(os.path.join(output_path, 'integration.csv'), header=True)
 
-print("\n提取完成!")
+print("\n提取完成|ω・）")
 
