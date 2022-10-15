@@ -50,6 +50,7 @@ ChangeEncode(filelist)
 # 批量提取KKS、QS status的值
 colname = ('name', 'time', 'KKS', 'QS Status')
 total = pd.DataFrame(index=[0], columns=colname)
+i = 0
 
 for file_path in filelist:
     if ".CSV" in file_path:  # 如果是csv文件，进入处理
@@ -70,6 +71,9 @@ for file_path in filelist:
             s = pd.DataFrame({'name': str[0], 'time': str[1], 'KKS': kks, 'QS Status': qs},
                              index=[0])
             total = pd.concat([total, s], ignore_index=True)
+            
+            print("working on file{}".format(i))
+            i = i + 1
         except IndexError:
             print("Cannot find KKS and QS status in {}!".format(file_path))
 
