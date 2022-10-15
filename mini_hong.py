@@ -33,7 +33,7 @@ def ChangeEncode(file_list):
 
 
 def Getstring(path_string):
-    """输入路径名，返回受试者姓名，测量日期"""
+    """字符串处理：输入路径名，返回受试者姓名，测量日期"""
     filename = path_string.split("\\")[-1]
     # 提取姓名
     info = filename.split("_")
@@ -56,7 +56,6 @@ for file_path in filelist:
         df = pd.read_csv(file_path, sep=";", encoding="utf8")
         # 提取第一列为KKS的第二列值
         kks_bool = (df.iloc[:, 0]== 'KKS')  # KKS所在行为True
-        kks = df[kks_bool]
         kks = df[kks_bool].iloc[0, 1]
         kks = kks.split()[-1]
         # 提取第一列为QS Status的第二列值
