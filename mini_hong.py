@@ -73,5 +73,5 @@ for file_path in filelist:
 total = total.drop(0)  # 删除初始创建的索引0
 total.to_csv(os.path.join(output_path, 'integration.csv'), header=True)
 
-print("\n提取完成|ω・）")
+print("\n提取完成|ω・）\n")
 
