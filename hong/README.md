@@ -1,3 +1,6 @@
+## 代码内容：
+提取excel里KKS，QS Status，K Max (Front)的对应值，整合成一个新excel
+
 ## 使用方法：
 1. 在.py所在文件夹内 shift+鼠标右键
 2. 选择“在此处打开 Powershell窗口”
