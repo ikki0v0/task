@@ -11,6 +11,11 @@
 1. data_root：csv文件所在的总文件夹路径，程序以它为总目录向下遍历。
 2. output_path：输出csv文件的路径（请不要设置在data_root文件夹以及它子目录下）。
 
+## 输出：
+|   |name|time|KKS| QS Status|K Max (Front)|filename|
+|---|----|----|---|----------|-------------|--------|
+|  1|  xx|
+
 ## 注意事项：
 - 路径名称书写规范：请使用正斜杠"/"或双反斜杠"\\\\"进行连接。
   - 示例：F:/python/other/FFKC CSV文件
